@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ar.com.mrdev.app.user;
+package com.resolvolution.NED.app.user;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +23,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import java.util.Arrays;
 import java.util.stream.Stream;
-import static ar.com.mrdev.app.user.User.ROLE_MANAGER;
+import static com.resolvolution.NED.app.user.User.ROLE_MANAGER;
 
 
 @Component

@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ar.com.mrdev.app.user;
+package com.resolvolution.NED.app.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.resolvolution.NED.app.Constants;
 import lombok.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,7 +28,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.List;
-import static ar.com.mrdev.app.Constants.*;
+
 import static javax.validation.constraints.Pattern.Flag.CASE_INSENSITIVE;
 
 
@@ -45,12 +46,12 @@ public class User {
 	private @Id @GeneratedValue
 	Long id;
 
-	private @NotNull @Size(min = 3, max = SIZE_FIELD) String firstName;
-	private @NotNull @Size(min = 0, max = SIZE_FIELD) String lastName;
-	private @Size(min = 0, max = SIZE_DESCRIPTION) String description;
+	private @NotNull @Size(min = 3, max = Constants.SIZE_FIELD) String firstName;
+	private @NotNull @Size(min = 0, max = Constants.SIZE_FIELD) String lastName;
+	private @Size(min = 0, max = Constants.SIZE_DESCRIPTION) String description;
 
 	@Column(unique=true, nullable = false)
-	@Pattern(regexp = EMAIL_REGEXP, flags = CASE_INSENSITIVE, message="Invalid email address")
+	@Pattern(regexp = Constants.EMAIL_REGEXP, flags = CASE_INSENSITIVE, message="Invalid email address")
 	private @NotNull @Size(min = 3, max = 50) String email;
 
 	private @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

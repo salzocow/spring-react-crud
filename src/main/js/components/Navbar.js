@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="/">Spring React CRUD</a>
+      <a className="navbar-brand" href="/">N.E.D. - Non-Emergency Dispatcher</a>
       <button className="navbar-toggler" type="button"
               data-toggle="collapse"
               data-target="#navbarSupportedContent"

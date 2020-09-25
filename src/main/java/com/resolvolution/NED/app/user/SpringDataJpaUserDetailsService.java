@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ar.com.mrdev.app.user;
+package com.resolvolution.NED.app.user;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class SpringDataJpaUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
-		ar.com.mrdev.app.user.User user = this.repository.findByEmail(name);
+		com.resolvolution.NED.app.user.User user = this.repository.findByEmail(name);
 		if (user != null) {
 			log.info("User trying to access... username={}", name);
 			return new User(user.getEmail(), user.getPassword(),

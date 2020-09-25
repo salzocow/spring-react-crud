@@ -1,4 +1,4 @@
-package ar.com.mrdev.app;
+package com.resolvolution.NED.app;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

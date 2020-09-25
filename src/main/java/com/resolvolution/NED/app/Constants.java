@@ -1,4 +1,4 @@
-package ar.com.mrdev.app;
+package com.resolvolution.NED.app;
 
 public interface Constants {
 

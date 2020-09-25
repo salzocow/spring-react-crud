@@ -18,7 +18,7 @@ spring:
     #     CREATE USER spring_crud;
     #     \password spring_crud
     #     CREATE DATABASE spring_crud_dev OWNER spring_crud;
-    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/spring_crud_dev}
+    url: ${DATASOURCE_URL:jdbc:postgresql://scorpius.resolvolution.tld:5432/spring_crud_dev}
     username: ${DB_USER:spring_crud}
     password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver

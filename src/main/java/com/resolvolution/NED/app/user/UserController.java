@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ar.com.mrdev.app.user;
+package com.resolvolution.NED.app.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
-import static ar.com.mrdev.app.user.User.ROLE_MANAGER;
 
 
 @RestController
@@ -39,6 +38,6 @@ public class UserController {
 	@PutMapping("/api/users/{id}/profile")
 	@PreAuthorize("hasRole('ROLE_MANAGER') or #user?.email == authentication?.name")
 	public User updateProfile(HttpServletRequest request, @PathVariable Long id, @Validated @RequestBody User user) {
-		return userService.updateProfile(id, user, request.isUserInRole(ROLE_MANAGER));
+		return userService.updateProfile(id, user, request.isUserInRole(User.ROLE_MANAGER));
 	}
 }

@@ -13,16 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ar.com.mrdev.app;
+package com.resolvolution.NED.app;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@SpringBootApplication
-public class AppApplication {
+@Controller
+public class HomeController {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AppApplication.class, args);
+	@RequestMapping(value = {
+		"/",
+		"/about",
+		"/users",
+		"/users/create",
+		"/users/{id}"
+	})
+	public String index() {
+		return "index";
 	}
-
 }
